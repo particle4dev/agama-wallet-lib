@@ -6,18 +6,18 @@
 
 const bitcoin = require('bitcoinjs-lib');
 
-let networks = {
+const networks = {
   btc: bitcoin.networks.bitcoin,
   ltc: {
     messagePrefix: '\x19Litecoin Signed Message:\n',
     bip32: {
       public: 0x019da462,
-      private: 0x019d9cfe
+      private: 0x019d9cfe,
     },
     pubKeyHash: 0x30,
     scriptHash: 0x32,
     wif: 0xb0,
-    dustThreshold: 0 // https://github.com/litecoin-project/litecoin/blob/v0.8.7.2/src/main.cpp#L360-L365
+    dustThreshold: 0, // https://github.com/litecoin-project/litecoin/blob/v0.8.7.2/src/main.cpp#L360-L365
   },
   dnr: {
     messagePrefix: '\x19Denarius Signed Message:\n',
@@ -473,7 +473,7 @@ let networks = {
     dustThreshold: 1000,
   },
   // https://github.com/lbryio/lbrycrd/blob/master/src/chainparams.cpp#L176
-  /*lbc: {
+  /* lbc: {
     messagePrefix: '\x19LBRY Credits Signed Message:\n',
     bip32: {
       public: 0x019C354f,
@@ -483,7 +483,7 @@ let networks = {
     scriptHash: 0x7a,
     wif: 0x1c,
     dustThreshold: 1000,
-  },*/
+  }, */
   lbc: {
     messagePrefix: '\x18LBRYcrd Signed Message:\n',
     bip32: {
@@ -661,7 +661,7 @@ let networks = {
     wif: 0x80,
     dustThreshold: 1000,
   },
-  /*lcc: {
+  /* lcc: {
     messagePrefix: '\x19Litecoin Cash Signed Message:\n',
     bip32: {
       public: 0x0488b21e,
@@ -671,7 +671,7 @@ let networks = {
     scriptHash: 0x5,
     wif: 0x32,
     dustThreshold: 1000,
-  },*/
+  }, */
   lcc: {
     messagePrefix: '\x18Litecoin Cash Signed Message:\n',
     bip32: {
@@ -845,7 +845,7 @@ let networks = {
     messagePrefix: '\x18ShadowCash Signed Message:\n',
     bip32: {
       public: 0xEE80286A,
-      private: 0xEE8031E8
+      private: 0xEE8031E8,
     },
     pubKeyHash: 0x3f,
     scriptHash: 0x7d,
@@ -855,87 +855,87 @@ let networks = {
     messagePrefix: '\x18Mazacoin Signed Message:\n',
     bip32: {
       public: 0x0488b21e,
-      private: 0x0488ade4
+      private: 0x0488ade4,
     },
     pubKeyHash: 0x32,
     scriptHash: 0x09,
-    wif: 0xe0
+    wif: 0xe0,
   },
   ppc: {
     messagePrefix: '\x18Peercoin Signed Message:\n',
     bip32: {
       public: 0x0488b21e,
-      private: 0x0488ade4
+      private: 0x0488ade4,
     },
     pubKeyHash: 0x37,
     scriptHash: 0x00, // TODO set this correctly
-    wif: 0xb7
+    wif: 0xb7,
   },
   axe: {
     messagePrefix: '\x18AXE Signed Message:\n',
     bip32: {
       public: 0x0488b21e,
-      private: 0x0488ade4
+      private: 0x0488ade4,
     },
     pubKeyHash: 0x37,
     scriptHash: 0x10, // TODO set this correctly
-    wif: 0xcc
+    wif: 0xcc,
   },
   slm: {
     messagePrefix: '\x18Slimcoin Signed Message:\n',
     bip32: {
       public: 0xef6adf10,
-      private: 0xef69ea80
+      private: 0xef69ea80,
     },
     pubKeyHash: 0x3f,
     scriptHash: 0x7d,
-    wif: 0x46
+    wif: 0x46,
   },
   nebl: {
     messagePrefix: '\x18Neblio Signed Message:\n',
     bip32: {
       public: 0x0488b21e,
-      private: 0x0488ade4
+      private: 0x0488ade4,
     },
     pubKeyHash: 0x35,
     scriptHash: 0x70,
-    wif: 0xb5
+    wif: 0xb5,
   },
   jbs: {
     messagePrefix: '\x19Jumbucks Signed Message:\n',
     bip32: {
       public: 0x037a689a,
-      private: 0x037a6460
+      private: 0x037a6460,
     },
     pubKeyHash: 0x2b,
     scriptHash: 0x05,
-    wif: 0xab
+    wif: 0xab,
   },
   zet: {
     messagePrefix: '\x18Zetacoin Signed Message:\n',
     bip32: {
       public: 0x0488b21e,
-      private: 0x0488ade4
+      private: 0x0488ade4,
     },
     pubKeyHash: 0x50,
     scriptHash: 0x09,
-    wif: 0xe0
+    wif: 0xe0,
   },
   onx: {
     messagePrefix: '\x18Onixcoin Signed Message:\n',
     bip32: {
       public: 0x049d7cb2,
-      private: 0x049d7878
+      private: 0x049d7878,
     },
     pubKeyHash: 0x4B,
     scriptHash: 0x05,
-    wif: 0x80
+    wif: 0x80,
   },
   usnbt: {
     messagePrefix: '\x18Nu Signed Message:\n',
     bip32: {
       public: 0x0488b21e,
-      private: 0x0488ade4
+      private: 0x0488ade4,
     },
     pubKeyHash: 0x19,
     scriptHash: 0x1a,
@@ -945,7 +945,7 @@ let networks = {
     messagePrefix: '\x19Beetlecoin Signed Message:\n',
     bip32: {
       public: 0x0488b21e,
-      private: 0x0488ade4
+      private: 0x0488ade4,
     },
     pubKeyHash: 0x1A,
     scriptHash: 0x55,
@@ -1385,11 +1385,11 @@ let networks = {
     messagePrefix: '\x18Xuez Signed Message:\n',
     bip32: {
       public: 0x022d2533,
-      private: 0x0221312b
+      private: 0x0221312b,
     },
     pubKeyHash: 0x4b,
     scriptHash: 0x12,
-    wif: 0xd4
+    wif: 0xd4,
   },
   nrg: { // etk?
     messagePrefix: '\x18Energicoin Signed Message:\n',
